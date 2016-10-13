@@ -10,6 +10,7 @@ branches:
 php:
     - 5.6
     - 7.0
+    - hhvm
 
 env:
     - WP_VERSION=4.0
@@ -41,15 +42,10 @@ before_script:
 - cd /var/www/wp.localtest.me/htdocs/
 - wp --allow-root plugin install https://downloads.wordpress.org/plugin/buddypress.2.2.3.1.zip
 - wp --allow-root plugin install https://downloads.wordpress.org/plugin/bbpress.2.5.7.zip
-- wp --allow-root plugin install https://downloads.wordpress.org/plugin/rtsocial.2.1.18.zip
 - wp plugin activate --all
-- wp --allow-root user create EDITORUSER editor@localtest.me --role=editor --user_pass=EDITORPASS
-- wp --allow-root user create AUTHORUSER author@localtest.me --role=author --user_pass=AUTHORPASS
-- wp --allow-root user create CONTRIBUTORUSER contributor@localtest.me --role=contributor --user_pass=CONTRIBUTORPASS
-- wp --allow-root user create SUBSCRIBERUSER subscriber@localtest.me --role=author --user_pass=SUBSCRIBERPASS
 - cd $PLUGIN_DIR
 - cd tests/codeception/
--
+- composer update
 
 script:
-- xvfb-run --server-args="-screen 0, 1624x1068x24" vendor/bin/wpcept run acceptance
+- vendor/bin/wpcept run acceptance homepageCept.php
