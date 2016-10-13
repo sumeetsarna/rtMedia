@@ -8,18 +8,11 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - \Helper\Acceptance
-        - WPWebDriver
+        - WPBrowser
     config:   
-          WPWebDriver:
-            host: 'hub-cloud.browserstack.com'
-            port: 80
-            browser: 'chrome'
-            url: 'http://demo.rtmedia.io/'
+          WPBrowser:
+            url: 'http://sumeetqatester.rtcamp.net/'
             adminUsername: ''
             adminPassword: ''
             adminPath: '/wp-admin'
-            capabilities:
-              'browserstack.user': ''
-              'browserstack.key': ''
-              'os': 'OS X'
-              'os_version' : 'El Capitan'    
+            
