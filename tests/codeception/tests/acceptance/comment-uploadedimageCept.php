@@ -14,7 +14,7 @@ $I->attachFile('input[type="file"]','hello.png');
 $I->wait(5);
 $I->click('Post Update');
 $I->wait(12);
-// Add a comment
+// Open that image and add a comment
 $I->click('.rtmedia-item-thumbnail');
 $I->wait(15);
 $I->click('textarea#comment_content');

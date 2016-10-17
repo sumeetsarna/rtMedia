@@ -28,7 +28,7 @@ $I->fillField('billing_phone','123456789');
 //$I->selectOption('.country_to_state','Netherlands');
 $I->fillField('billing_address_1','any address');
 $I->fillField('billing_city','Pune');
-//$I->selectOption('.state_select','Maharashtra');
+$I->selectOption('.state_select','Maharashtra');
 $I->fillField('billing_postcode','411001');
 //$I->see('Place order');
 //$I->click('Place order');
